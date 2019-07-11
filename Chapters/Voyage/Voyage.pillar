@@ -563,7 +563,7 @@ like this:
 [[[
 {
 	'name' -> 'John'.
-	'orders' -> { '$gt' : 10 } asDictionary
+	'orders' -> { '$gt' -> 10 } asDictionary
 } asDictionary
 ]]]
 
@@ -594,7 +594,7 @@ To access values embedded in documents with JSON queries, the dot notation is us
 
 [[[
 {
-	'origin.x' -> {'$eq' : 42} asDictionary
+	'origin.x' -> { '$eq' -> 42 } asDictionary
 } asDictionary
 ]]]
 
@@ -609,11 +609,11 @@ to select all objects whose name is ==John== that have more than ten orders OR o
 	{
 		{
 			'name' -> 'John'.
-			'orders' -> { '$gt': 10 } asDictionary
+			'orders' -> { '$gt' -> 10 } asDictionary
 		} asDictionary.
 		{
-			'name' -> { '$ne': 'John'} asDictionary.
-			'orders' -> { '$lte': 10 } asDictionary
+			'name' -> { '$ne' -> 'John'} asDictionary.
+			'orders' -> { '$lte' -> 10 } asDictionary
 		} asDictionary.
 	}.
 } asDictionary.
@@ -628,8 +628,8 @@ all documents with a ==fullname.lastName== that starts with the letter ==D==:
 [[[
 {
 	'fullname.lastName' -> {
-		'$regexp': '^D.*'.
-		'$options': 'i'.
+		'$regexp' -> '^D.*'.
+		'$options' -> 'i'.
 	} asDictionary.
 } asDictionary.
 ]]]
